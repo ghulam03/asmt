@@ -1,4 +1,4 @@
-// import "../styles/global.css";
+import "../styles/input.css";
 
 import Layout from "../components/Layout";
 import { Provider } from "react-redux";

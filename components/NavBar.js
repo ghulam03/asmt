@@ -1,9 +1,17 @@
 import Link from "next/link";
 import React from "react";
+import { useSelector } from "react-redux";
 // import styles from "./navbar.module.css";
 function NavBar() {
+  const isAuth=useSelector((state)=>state.user.isAuthenticated)
   return (
     <>
+    {!isAuth && (<p>
+      Login to see details..
+    </p>)}
+    {isAuth &&(
+
+   
       <nav 
       // className={styles.navbar}
       >
@@ -14,7 +22,7 @@ function NavBar() {
         </ul>
         <ul>
          
-            <h2 className="bg-orange-200">Matches</h2>
+            <h2 >Matches</h2>
         </ul>
         <ul>
             <h2>Manage sources</h2>
@@ -29,6 +37,7 @@ function NavBar() {
             <h2>Settings</h2>
         </ul>
       </nav>
+       )}
     </>
   );
 }

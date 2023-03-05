@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
     <>
-    <div
+    <div className='bg-slate-300'
     //  className={styles.container}
     >
         

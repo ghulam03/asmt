@@ -8,7 +8,7 @@ function Layout(props) {
     <>
     {/* <head> */}
         
-      <link href="/dist/output.css" rel="stylesheet"/>
+      {/* <link href="/dist/output.css" rel="stylesheet"/> */}
     {/* </head> */}
 
     <Header/>
