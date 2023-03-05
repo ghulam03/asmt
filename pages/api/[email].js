@@ -1,7 +1,6 @@
 import prisma from "../../prisma/prisma"
 
 export default async function handle(req, res) {
-    const { uname, password} = req.body;
     const email=req.query.email
     await prisma.$connect();
     const result = await prisma.person.delete({

@@ -6,11 +6,6 @@ import React from 'react'
 function Layout(props) {
   return (
     <>
-    {/* <head> */}
-        
-      {/* <link href="/dist/output.css" rel="stylesheet"/> */}
-    {/* </head> */}
-
     <Header/>
     <NavBar/>
     <main>{props.children}</main>
