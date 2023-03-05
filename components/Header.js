@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <>
-      <div className=" h-14 bg-stone-400">
+      <div className=" h-14 bg-slate-300">
         {!isAuth && (
           <>
             <div className="flex flex-row justify-end">

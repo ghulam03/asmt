@@ -7,11 +7,10 @@ import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 
 function Index(props) {
-    
-    const router=useRouter()
-    const isAuth = useSelector((state) => state.user.isAuthenticated);
+  const router = useRouter();
+  const isAuth = useSelector((state) => state.user.isAuthenticated);
   const [persons, setpersons] = useState(props.persons);
-  const [isFiltered, setisFiltered] = useState(false)
+  const [isFiltered, setisFiltered] = useState(false);
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -25,89 +24,86 @@ function Index(props) {
       person.company.toLowerCase().includes(searchTermLowerCase)
     );
   });
-  
-//sort by name
-function sbName(){
+
+  //sort by name
+  function sbName() {
     filteredPersons.sort((a, b) => a.uname.localeCompare(b.uname));
-    
-}
-  
+  }
+
   return (
     <>
       {isAuth && (
         <>
-          <div className="ml-56 mb-36 bg-teal-300">
-            <input className="bg-white" type="text" placeholder="Search" 
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-            >
-                
-            </input>
-            <h2>Customer Details</h2>
-            <br></br>
-            <div className="flex flex-row">
-              <p>The terms you are tracking</p>
-              <button
-              onClick={()=>{
-              setisFiltered((state)=>!state)
-            }}
-              >Filter</button>
+          <div className="mt-4 ml-56 bg-teal-300 mr-60">
+            <input
+              className="w-full px-5 bg-slate-300"
+              type="text"
+              placeholder="Search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            ></input>
+            <h2 className="ml-20">Customer Details</h2>
+            <div className="flex flex-row justify-between">
+              <p className="ml-20">The terms you are tracking</p>
+              <button className="w-24 bg-orange-200 hover:bg-slate-300"
+                onClick={() => {
+                  setisFiltered((state) => !state);
+                }}
+              >
+                Filter
+              </button>
               <Link href="/add-person">
-                <button>Add</button>
+                <button className="w-24 mr-40 bg-orange-200 hover:bg-slate-300">Add</button>
               </Link>
             </div>
-            <div className="   bg-lime-100">
-              <tr className=" flex flex-row justify-between">
-                <td>Username</td>
+            
+            <div className=" bg-lime-100">
+              <tr className="flex flex-row justify-between ">
+                <td className="ml-10">Username</td>
                 <td>E-mail</td>
                 <td>Phone No.</td>
                 <td>Company</td>
-                <td>Action</td>
+                <td className="mr-10">Action</td>
               </tr>
             </div>
           </div>
         </>
       )}
-      {isAuth && isFiltered && (
-         <div className="ml-56  bg-teal-300">
-            <button onClick={sbName}>Sort By Name</button>
-            <button>Sort By Company</button>
-         </div>
 
+{isAuth && isFiltered && (
+        <div className="ml-56 bg-teal-300">
+          <button onClick={sbName}>Sort By Name</button>
+          <button>Sort By Company</button>
+        </div>
       )}
+
       {isAuth &&
-      
-        // persons
-        filteredPersons
-        .map((c) => {
+        filteredPersons.map((c) => {
           return (
             <>
-              <div className="  ml-56  bg-yellow-300">
-                <tr className=" flex flex-row justify-between">
-                  <td>{c.uname}</td>
+              <div className="ml-56 bg-yellow-300 mr-60 ">
+                <tr className="flex flex-row justify-between ">
+                  <td className="ml-10">{c.uname}</td>
                   <td>{c.email}</td>
                   <td>{c.phone}</td>
                   <td>{c.company}</td>
                   <td>
-                    <span>
-                        <Link href={c.email} >
-                      {/* <button> */}
+                    <span className="mr-4 bg-orange-200 hover:bg-slate-300">
+                      <Link href={c.email}>
                         Edit
-                        {/* </button> */}
                       </Link>
-                      
-
-                      </span>
-                      <span>
-                      <button
+                    </span>
+                    <span>
+                      <button className="mr-10 bg-orange-200 hover:bg-slate-300"
                         onClick={() => {
                           axios
                             .delete(
                               `api/${c.email}
-                      `)
+                    `
+                            )
                             .then(function (response) {
-                              console.log("person deleted", response)
-                              router.push('/')
+                              console.log("person deleted", response);
+                              router.push("/");
                             })
                             .catch(function (error) {
                               console.log(error);
@@ -123,6 +119,7 @@ function sbName(){
             </>
           );
         })}
+
     </>
   );
 }

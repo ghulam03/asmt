@@ -33,27 +33,25 @@ function EditPerson(props) {
   return (
     <>
       <div
-        className="m-9 bg-slate-100 
-    
-    "
+        className="ml-40 mr-48 m-9 bg-slate-100 "
       >
-        <h2 className="pw-80">Edit Person Here!</h2>
+        <h2 className="ml-56 pw-80">Edit Person Here!</h2>
         <form className="flex flex-col" onSubmit={handleSubmit}>
-          <label>User Name</label>
+          <label className="ml-40">User Name</label>
           <input
             type="text"
             placeholder="Enter Name"
             value={uname}
             onChange={(e) => setuname(e.target.value)}
           ></input>
-          <label>Email</label>
+          <label className="ml-40">Email</label>
 
           <input
             type="text"
             disabled
             value={email}
           ></input>
-          <label>Phone</label>
+          <label className="ml-40">Phone</label>
 
           <input
             type="number"
@@ -61,7 +59,7 @@ function EditPerson(props) {
             placeholder="Enter Phone Number "
             onChange={(e) => setphone(e.target.value)}
           ></input>
-          <label>Company</label>
+          <label className="ml-40">Company</label>
 
           <input
             type="text"
@@ -69,7 +67,7 @@ function EditPerson(props) {
             placeholder="Enter Company Details "
             onChange={(e) => setcompany(e.target.value)}
           ></input>
-          <button>Edit Person</button>
+          <button className="bg-red-400 hover:bg-red-200">Edit Person</button>
         </form>
       </div>
     </>

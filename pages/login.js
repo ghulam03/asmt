@@ -29,46 +29,20 @@ function Login() {
       .catch(function (error) {
         console.log(error);
       });
-    }
-
-    // fetch("/api/login", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ userName, password }),
-    // })
-    //   .then((data) => data.json())
-    //   .then((datta) => {
-    //     console.log(datta);
-    //     if (datta.isAuthenticated) {
-    //       console.log("logged in");
-    //       router.push("/");
-    //       dispatch(addUser());
-    //     } else {
-    //       console.log("Invalid Credential");
-    //       setloginFB("Invalid Credential");
-    //     }
-    //   });
-//   }
-
-  
-  
+    }  
   return (
       <>
-    <div className="bg-slate-100 m-9 
-    
-    ">
-      <h2 className="pw-80">Login Here!</h2>
+    <div className="ml-40 mr-48 bg-slate-100 m-9">
+      <h2 className="ml-72 pw-80">Login Here!</h2>
       <form  className="flex flex-col" onSubmit={handleSubmit}>
-        <label>User Name</label>
+        <label className="ml-48">User Name</label>
         <input
           type="text"
           placeholder="Enter Email"
           value={uname}
           onChange={(e) => setuname(e.target.value)}
           ></input>
-        <label>Password</label>
+        <label className="ml-48">Password</label>
 
         <input
           type="password"
@@ -76,7 +50,7 @@ function Login() {
           placeholder="Enter Password"
           onChange={(e) => setpassword(e.target.value)}
           ></input>
-        <button>Login</button>
+        <button className="bg-red-400 hover:bg-red-600">Login</button>
       </form>
     </div>
   </>

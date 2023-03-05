@@ -35,28 +35,26 @@ function AddPerson() {
   return (
     <>
       <div
-        className="m-9 bg-slate-100 
-    
-    "
+        className="mr-48 ml-60 bg-slate-100 "
       >
-        <h2 className="pw-80">Add Person Here!</h2>
+        <h2 className="ml-52 pw-80">Add Person Here!</h2>
         <form className="flex flex-col" onSubmit={handleSubmit}>
-          <label>User Name</label>
+          <label className="ml-40">User Name</label>
           <input
             type="text"
             placeholder="Enter Name"
             value={uname}
             onChange={(e) => setuname(e.target.value)}
           ></input>
-          <label>Email</label>
+          <label className="ml-40">Email</label>
 
-          <input
+          <input 
             type="text"
             value={email}
             placeholder="Enter Unique Email "
             onChange={(e) => setemail(e.target.value)}
           ></input>
-          <label>Phone</label>
+          <label className="ml-40">Phone</label>
 
           <input
             type="number"
@@ -64,7 +62,7 @@ function AddPerson() {
             placeholder="Enter Phone Number "
             onChange={(e) => setphone(e.target.value)}
           ></input>
-          <label>Company</label>
+          <label className="ml-40">Company</label>
 
           <input
             type="text"
@@ -72,7 +70,7 @@ function AddPerson() {
             placeholder="Enter Company Details "
             onChange={(e) => setcompany(e.target.value)}
           ></input>
-          <button>Add Person</button>
+          <button className="bg-red-400">Add Person</button>
         </form>
       </div>
     </>
