@@ -17,10 +17,10 @@ function Header() {
           <>
             <div className="flex flex-row justify-end">
               <Link href="/login">
-                <button className="mt-3 mr-8 bg-amber-500">Login</button>
+                <button className="mt-3 mr-8 bg-amber-500 hover:bg-amber-700">Login</button>
               </Link>
               <Link href="/sign-up">
-                <button className="mt-3 mr-8 bg-amber-500">SignUp</button>
+                <button className="mt-3 mr-8 bg-amber-500 hover:bg-amber-700">SignUp</button>
               </Link>
             </div>
           </>
@@ -29,7 +29,7 @@ function Header() {
         {isAuth && (
           <div className="flex flex-row justify-end">
             <button
-            className="mt-3 mr-8 bg-amber-500"
+            className="mt-3 mr-8 bg-amber-500 hover:bg-amber-700"
               onClick={() => {
                 dispatch(deleteUser());
                 router.push("/");

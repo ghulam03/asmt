@@ -10,10 +10,10 @@ function NavBar() {
   const isAuth = useSelector((state) => state.user.isAuthenticated);
   return (
     <>
-      {!isAuth && <p className="ml-12  bg-amber-500">Login to see details..</p>}
+      {!isAuth && <p className="ml-12 bg-amber-500">Login to see details..</p>}
 
       {isAuth && (
-        <nav className="bg-red-100 h-60">
+        <nav className="flex flex-row justify-center ml-40 mr-40 bg-red-100 ">
           <ul className=" ml-14">
             <Link href="/">
               <div className="flex flex-row justify-start w-36 hover:bg-cyan-500">

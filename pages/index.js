@@ -34,7 +34,7 @@ function Index(props) {
     <>
       {isAuth && (
         <>
-          <div className="mt-4 ml-56 bg-teal-300 mr-60">
+          <div className="mt-4 ml-56 bg-lime-100 mr-60">
             <input
               className="w-full px-5 bg-slate-300"
               type="text"
@@ -56,8 +56,13 @@ function Index(props) {
                 <button className="w-24 mr-40 bg-orange-200 hover:bg-slate-300">Add</button>
               </Link>
             </div>
-            
-            <div className=" bg-lime-100">
+            {isFiltered && (
+        <div className=" bg-lime-300">
+          <button className="bg-red-200 ml-60 hover:bg-red-300">Sort By Name</button>
+          <button className="ml-40 bg-red-200 hover:bg-red-300">Sort By Company</button>
+        </div>
+      )}
+            <div className=" bg-lime-200">
               <tr className="flex flex-row justify-between ">
                 <td className="ml-10">Username</td>
                 <td>E-mail</td>
@@ -70,18 +75,18 @@ function Index(props) {
         </>
       )}
 
-{isAuth && isFiltered && (
-        <div className="ml-56 bg-teal-300">
-          <button onClick={sbName}>Sort By Name</button>
-          <button>Sort By Company</button>
+{/* {isAuth && isFiltered && (
+        <div className="ml-56 bg-lime-300">
+          <button className="ml-40 bg-red-200 hover:bg-red-300">Sort By Name</button>
+          <button className="ml-40 bg-red-200 hover:bg-red-300">Sort By Company</button>
         </div>
-      )}
+      )} */}
 
       {isAuth &&
         filteredPersons.map((c) => {
           return (
             <>
-              <div className="ml-56 bg-yellow-300 mr-60 ">
+              <div className="ml-56 bg-lime-200 mr-60 ">
                 <tr className="flex flex-row justify-between ">
                   <td className="ml-10">{c.uname}</td>
                   <td>{c.email}</td>

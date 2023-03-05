@@ -50,7 +50,7 @@ function Login() {
           placeholder="Enter Password"
           onChange={(e) => setpassword(e.target.value)}
           ></input>
-        <button className="bg-red-400 hover:bg-red-600">Login</button>
+        <button className="bg-red-400 hover:bg-red-900">Login</button>
       </form>
     </div>
   </>
