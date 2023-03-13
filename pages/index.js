@@ -134,7 +134,7 @@ export default Index;
 export async function getStaticProps() {
   await prisma.$connect();
   const persons = await prisma.person.findMany();
-
+  console.log("all persons",persons)
   return {
     props: { persons },
     revalidate: 10,

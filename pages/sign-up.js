@@ -9,7 +9,7 @@ function SignUp() {
   const [uname, setuname] = useState("");
   const [password, setpassword] = useState("");
   const id=uuidv4()
-  console.log("id",id)
+  // console.log("id",id)
   
   function handleSubmit(e) {
     e.preventDefault();
